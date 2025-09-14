@@ -1,7 +1,22 @@
-console.log(`cookies: ${navigator.cookieEnabled}`);
-
-setCookie ("username", "jugador", 1 );
-console.log(`username: ${getCookie("username")}`);
+//setCookie("username", "", 1)
+//deleteCookie("username")
+window.addEventListener("load", ()=> {
+    const username = getCookie("username") || "";
+    if (username === "" || username.length > 50) {
+        console.log(`bad user ${username}`)
+        document.getElementById("changeUsername").style.display = "flex";
+    }
+    document.getElementById("applyUsername").addEventListener("click", () => {
+        const value = document.getElementById("username").value;
+        setCookie("username", value, 1);
+        document.getElementById("changeUsername").style.display = "none";
+        console.log(getCookie("username"))
+    })
+    const welcome = document.getElementById("welcome");
+    if (welcome) {
+        welcome.textContent = `Benvingut ${username}!`
+    }
+});
 
 function setCookie(name, value, daysTolive) {
     const date = new Date();
@@ -9,9 +24,11 @@ function setCookie(name, value, daysTolive) {
     let expires = "expires=" +  date.toUTCString ();  
     document.cookie = `${name}=${value}; ${expires };` 
 }
+
 function deleteCookie(name) {
     setCookie(name, null, null);
 }
+
 function getCookie(name) {
     const cDecoded =  decodeURIComponent(document.cookie);
     const cArray = cDecoded.split("; ");
@@ -31,7 +48,11 @@ function showSection(sectionId) {
     document.getElementById('options').style.display = 'none';
     if (sectionId === 'menu') {
         document.getElementById('menu').style.display = 'flex';
+        var username = getCookie('username');
+        document.getElementById('welcome').textContent = `Benvingut ${username}`;
     } else {
         document.getElementById(sectionId).style.display = 'block';
     }
-}
+}  
+
+

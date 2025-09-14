@@ -9,16 +9,36 @@
   </head>
   <body>
     <section id="menu">
+      <h1 id="welcome">Benvingut</h1>
       <button onclick="showSection('game')">Nova Partida</button>
       <button onclick="showSection('options')">Opcions</button>
     </section>
     <section id="game">
-        <h1>Bingo!</h1>
-        <button onclick="showSection('menu')">Menu</button>
+      <h1>Bingo!</h1>
+      <button onclick="showSection('menu')">Menu</button>
     </section>
     <section id="options">
-        <h1>Opcions</h1>
-        <button onclick="showSection('menu')">Menu</button>
+      <h1>Opcions</h1>
+      <button onclick="showSection('menu')">Menu</button>
+    </section>
+    <section id="changeUsername">
+      <h2>Crear or cambiar el nom d'usuari</h2>
+      <ul>
+        <li>
+          <p>El nom d’usuari no pot estar buit.</p>
+        </li>
+        <li>
+          <p>El nom d’usuari no pot tenir més de 50 caràcters.</p>
+        </li>
+      </ul>
+      <div>
+        <label for="username">Nom d'usuari</label>
+        <input
+          type="text"
+          id="username"
+        />
+        <button id="applyUsername">Aceptar</button>
+      </div>
     </section>
   </body>
 </html>
