@@ -1,7 +1,6 @@
 console.log(`cookies: ${navigator.cookieEnabled}`);
 
-setCookie ("username", "example_user", 1 );
-setCookie ("bgmusic", 50, 1)
+setCookie ("username", "jugador", 1 );
 console.log(`username: ${getCookie("username")}`);
 
 function setCookie(name, value, daysTolive) {
@@ -24,4 +23,15 @@ function getCookie(name) {
         }
     })
     return result;
+}
+
+function showSection(sectionId) {
+    document.getElementById('menu').style.display = 'none';
+    document.getElementById('game').style.display = 'none';
+    document.getElementById('options').style.display = 'none';
+    if (sectionId === 'menu') {
+        document.getElementById('menu').style.display = 'flex';
+    } else {
+        document.getElementById(sectionId).style.display = 'block';
+    }
 }
