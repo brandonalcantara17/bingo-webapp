@@ -9,17 +9,24 @@
   </head>
   <body>
     <section id="menu">
-      <h1 id="welcome">Benvingut</h1>
+      <header>
+        <button class="menu-button" onclick="showSection('menu')">Menu</button>
+        <h1 id="welcome">Benvingut</h1>
+      </header>
       <button onclick="showSection('game')">Nova Partida</button>
       <button onclick="showSection('options')">Opcions</button>
     </section>
     <section id="game">
-      <h1>Bingo!</h1>
-      <button onclick="showSection('menu')">Menu</button>
+      <header>
+        <button class="menu-button" onclick="showSection('menu')">Menu</button>
+        <h1>Bingo!</h1>
+      </header>
     </section>
     <section id="options">
-      <h1>Opcions</h1>
-      <button onclick="showSection('menu')">Menu</button>
+      <header>
+        <button class="menu-button" onclick="showSection('menu')">Menu</button>
+        <h1>Opcions</h1>
+      </header>
     </section>
     <section id="changeUsername">
       <h2>Crear or cambiar el nom d'usuari</h2>
@@ -33,10 +40,7 @@
       </ul>
       <div>
         <label for="username">Nom d'usuari</label>
-        <input
-          type="text"
-          id="username"
-        />
+        <input type="text" id="username" required minlength="1" maxlength="50"/>
         <button id="applyUsername">Aceptar</button>
       </div>
     </section>
