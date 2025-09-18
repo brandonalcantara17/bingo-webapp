@@ -52,7 +52,7 @@ function checkName() {
   } else {
     const welcome = document.getElementById("welcome");
     if (welcome) {
-      welcome.textContent = `Benvingut ${username}!`;
+      welcome.textContent = `Benvingut ${username}`;
     }
   }
 }
@@ -67,7 +67,7 @@ function changeName() {
   setCookie("username", value, 1);
   const welcome = document.getElementById("welcome");
   if (welcome) {
-    welcome.textContent = `Benvingut ${usernameInput}!`;
+    welcome.textContent = `Benvingut ${usernameInput}`;
   }
   document.getElementById("changeUsername").style.display = "none"; 
 }
