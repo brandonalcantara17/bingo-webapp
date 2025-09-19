@@ -8,44 +8,20 @@
     <script src="script.js"></script>
   </head>
   <body>
-    <section id="menu">
-      <header>
-        <button class="menu-button" onclick="showSection('menu')">Menu</button>
-        <h1 id="welcome">Benvingut</h1>
-      </header>
-      <div id="buttonCont">
-        <button onclick="showSection('game')">Nova Partida</button>
-        <button onclick="showSection('options')">Opcions</button>
-      </div>
-      </div>
-    </section>
-    <section id="game">
-      <header>
-        <button class="menu-button" onclick="showSection('menu')">Menu</button>
-        <h1>Bingo!</h1>
-      </header>
-    </section>
-    <section id="options">
-      <header>
-        <button class="menu-button" onclick="showSection('menu')">Menu</button>
-        <h1>Opcions</h1>
-      </header>
-    </section>
+    <img id="bgImage" src="imgs/bg.png" alt="Background Image">
     <section id="changeUsername">
       <h2>Crear or cambiar el nom d'usuari</h2>
       <ul>
         <li>
-          <p>El nom d’usuari no pot estar buit.</p>
+          <h4>- El nom d’usuari no pot estar buit.</h4>
         </li>
         <li>
-          <p>El nom d’usuari no pot tenir més de 50 caràcters.</p>
+          <h4>- El nom d’usuari no pot tenir més de 50 caràcters.</h4>
         </li>
       </ul>
-      <div>
-        <label for="username">Nom d'usuari</label>
-        <input type="text" id="username" required minlength="1" maxlength="50"/>
+        <label for="username">Nom d'usuari:</label>
+        <input type="text" id="username" placeholder="Nom d'usuari" required minlength="1" maxlength="50"/>
         <button id="applyUsername">Aceptar</button>
-      </div>
     </section>
   </body>
 </html>

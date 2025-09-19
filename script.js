@@ -1,5 +1,5 @@
 //setCookie("username", "", 1)
-//deleteCookie("username")
+deleteCookie("username")
 window.addEventListener("load", () => {
   checkName();
   document
@@ -31,30 +31,13 @@ function getCookie(name) {
   return result;
 }
 
-function showSection(sectionId) {
-  document.getElementById("menu").style.display = "none";
-  document.getElementById("game").style.display = "none";
-  document.getElementById("options").style.display = "none";
-  if (sectionId === "menu") {
-    document.getElementById("menu").style.display = "flex";
-    var username = getCookie("username");
-    document.getElementById("welcome").textContent = `Benvingut ${username}`;
-  } else {
-    document.getElementById(sectionId).style.display = "block";
-  }
-}
-
 function checkName() {
   const username = getCookie("username") || "";
   if (username === "" || username.length > 50) {
     console.log(`bad user ${username}`);
-    document.getElementById("changeUsername").style.display = "flex";
-  } else {
-    const welcome = document.getElementById("welcome");
-    if (welcome) {
-      welcome.textContent = `Benvingut ${username}`;
-    }
-  }
+    document.getElementById("changeUsername").style.visibility = "visible";
+    document.getElementById("changeUsername").style.opacity = "1";
+  } 
 }
 
 function changeName() {
@@ -65,9 +48,6 @@ function changeName() {
   }
   const value = document.getElementById("username").value;
   setCookie("username", value, 1);
-  const welcome = document.getElementById("welcome");
-  if (welcome) {
-    welcome.textContent = `Benvingut ${usernameInput}`;
-  }
-  document.getElementById("changeUsername").style.display = "none"; 
+  document.getElementById("changeUsername").style.transform = "scale(0)";
+  document.getElementById("changeUsername").style.visibility = "hidden";
 }
