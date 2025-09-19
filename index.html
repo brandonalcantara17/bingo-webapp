@@ -8,7 +8,8 @@
     <script src="script.js"></script>
   </head>
   <body>
-    <img id="bgImage" src="imgs/bg.png" alt="Background Image">
+    <img id="bgImage" src="imgs/bg.png" alt="Background Image" />
+
     <section id="changeUsername">
       <h2>Crear or cambiar el nom d'usuari</h2>
       <ul>
@@ -19,9 +20,45 @@
           <h4>- El nom d’usuari no pot tenir més de 50 caràcters.</h4>
         </li>
       </ul>
-        <label for="username">Nom d'usuari:</label>
-        <input type="text" id="username" placeholder="Nom d'usuari" required minlength="1" maxlength="50"/>
-        <button id="applyUsername">Aceptar</button>
+      <label for="username">Nom d'usuari:</label>
+      <input
+        type="text"
+        id="username"
+        placeholder="Nom d'usuari"
+        required
+        minlength="1"
+        maxlength="50"
+      />
+      <button id="applyUsername">Aceptar</button>
+    </section>
+
+    <section id="menuPage">
+      <div id="parent">
+        <div id="div1">
+          <h1>BINGO!</h1>
+        </div>
+        <div id="div2">
+          <h1>BRANDON ALCANTARA BINGO!!!</h1>
+        </div>
+        <div id="div3">
+          <img id="coverArt" src="imgs/bingo.png" alt="Cover Art" />
+        </div>
+        <div id="div4">
+          <nav>
+            <button id="play">Jugar</button>
+            <button id="options" onclick="show">Opcions</button>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <section id="optionsPage">
+      <div id="optionsParent">
+        <div id="optionsDiv1">1</div>
+        <div id="optionsDiv2">2</div>
+        <div id="optionsDiv3">3</div>
+        <div id="optionsDiv4">4</div>
+      </div>
     </section>
   </body>
 </html>

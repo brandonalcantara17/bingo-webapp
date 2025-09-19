@@ -1,5 +1,5 @@
 //setCookie("username", "", 1)
-deleteCookie("username")
+//deleteCookie("username")
 window.addEventListener("load", () => {
   checkName();
   document
@@ -37,17 +37,24 @@ function checkName() {
     console.log(`bad user ${username}`);
     document.getElementById("changeUsername").style.visibility = "visible";
     document.getElementById("changeUsername").style.opacity = "1";
-  } 
+  }
 }
 
 function changeName() {
   const usernameInput = document.getElementById("username").value.trim();
   if (usernameInput === "" || usernameInput.length > 50) {
     alert("El nom d'usarui està buit o supera més de 50 càracters");
-    return; 
+    return;
   }
   const value = document.getElementById("username").value;
   setCookie("username", value, 1);
   document.getElementById("changeUsername").style.transform = "scale(0)";
   document.getElementById("changeUsername").style.visibility = "hidden";
+}
+
+function showPage(pageName) {
+  const page = pageName;
+  if ((document.getElementById(page).display.visibility = "hidden")) {
+    Document.getElementById(page).display.visibility = "visible"; 
+  }
 }

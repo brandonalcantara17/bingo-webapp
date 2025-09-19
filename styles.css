@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Ink:wght@100..900&family=Bungee+Spice&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -11,15 +13,19 @@ header {
 }
 
 #bgImage {
-  height: 100%;
-  width: 100%;
-  z-index: -10000;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  object-fit: cover;
 }
 
 #changeUsername {
   visibility: hidden;
   opacity: 0;
-
+  z-index: 5;
   display: flex;
   font-family: "Bungee Spice", cursive;
   background-color: purple;
@@ -81,4 +87,162 @@ header {
 
 button:active {
   transform: scale(0.7);
+}
+
+#menuPage {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#parent {
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+}
+
+#parent > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#div1 {
+  grid-column: span 5 / span 5;
+
+  font-family: "Bungee Spice", cursive;
+  font: 200%;
+  text-shadow: 0px 0px 50px 50px grey;
+}
+
+#div2 {
+  grid-column: span 5 / span 5;
+  grid-column-start: 1;
+  grid-row-start: 5;
+}
+
+#div3 {
+  grid-column: span 3 / span 3;
+  grid-row: span 3 / span 3;
+  grid-column-start: 3;
+  grid-row-start: 2;
+}
+
+#div4 {
+  grid-column: span 2 / span 2;
+  grid-row: span 3 / span 3;
+  grid-column-start: 1;
+  grid-row-start: 2;
+
+  padding-left: 50px;
+}
+
+#coverArt {
+  width: 100%;
+  height: 100%;
+}
+
+#menuPage {
+  visibility: visible;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  background-color: lightgreen;
+  width: 90%;
+  height: 80%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+nav:hover {
+  width: 92%;
+  height: 82%;
+  transition: 0.2s ease;
+}
+
+nav:disabled {
+  transition: 1s ease;
+}
+
+#play,
+#options {
+  padding: 0;
+  width: 400px;
+  height: 100px;
+  border-radius: 25px;
+  outline: 1px solid black;
+  background-color: yellowgreen;
+  font-size: 60px;
+  font-family: "Bungee Spice", cursive;
+  text-shadow: 3px 10px 2px white;
+}
+
+#div4 button:hover {
+  border: solid 10px white;
+}
+
+#div1 h1 {
+  box-shadow: 0px 0px 30px 10px lightgrey;
+  background-color: lightgrey;
+  border-radius: 20px;
+  padding: 20px;
+  padding-inline: 100px;
+}
+
+#div2 h1 {
+  color: white;
+  font-family: "Bitcount Ink";
+  size: 100%;
+  text-shadow: 3px 2px 0px white;
+}
+
+
+#optionsParent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+}
+    
+#optionsDiv1 {
+    grid-column: span 5 / span 5;
+}
+
+#optionsDiv2 {
+    grid-row: span 3 / span 3;
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+#optionsDiv3 {
+    grid-column: span 5 / span 5;
+    grid-column-start: 1;
+    grid-row-start: 5;
+}
+
+#optionsDiv4 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 3;
+    grid-row-start: 2;
+}
+        
+#optionsPage {
+  visibility: visible;
+  z-index: 2;
 }
